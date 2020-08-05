@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TaskListViewController: UITableViewController {
+class TasksListViewController: UITableViewController {
     
     private var tasks = StorageManager.shared.fetchData()
     private let cellID = "cell"
@@ -75,7 +75,7 @@ class TaskListViewController: UITableViewController {
 
 //MARK:- table view data sourse
 
-extension TaskListViewController {
+extension TasksListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tasks.count
     }
@@ -88,7 +88,7 @@ extension TaskListViewController {
     }
 }
 
-extension TaskListViewController {
+extension TasksListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = tasks[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
